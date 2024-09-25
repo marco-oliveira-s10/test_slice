@@ -64,3 +64,42 @@ Esperamos que você faça:
 - Erro no Arquivo: O arquivo VISA_TRANSACTIONAL_CLEARING_20240705_02.json apresentou um erro de sintaxe no final. Não está claro se esse erro foi intencional, mas optei por corrigir manualmente o problema em vez de aplicar validações automáticas de JSON na aplicação.
 
 - Total de Registros: O número total de registros encontrados nos arquivos do diretório EP747 é de 500, correspondendo exatamente à mesma quantidade de registros no banco de dados após a importação.
+
+# Resultados
+
+- Baseado em:
+- dest_currency = '840' USD
+- dest_currency = '986' BRL
+- operation_type = '0' BUY
+- operation_type = '1' SAKE
+
+- 2.1. Soma total de COMPRAS em BRL
+SELECT SUM(purchase_value) AS total_compras_brl 
+FROM clearing_transactions 
+WHERE dest_currency = '986' AND operation_type = '0'; #72573264.68
+
+- 2.2. Soma total de COMPRAS em USD
+SELECT SUM(purchase_value) AS total_compras_usd 
+FROM clearing_transactions 
+WHERE dest_currency = '840' AND operation_type = '0'; #1627486.62
+
+- 2.3. Soma total de SAQUES em BRL
+SELECT SUM(purchase_value) AS total_saques_brl 
+FROM clearing_transactions 
+WHERE dest_currency = '986' AND operation_type = '1'; #4917.0
+
+- 2.4. Soma total de SAQUES em USD
+SELECT SUM(purchase_value) AS total_saques_usd 
+FROM clearing_transactions 
+WHERE dest_currency = '840' AND operation_type = '1';  #73100.0
+
+- 2.5. Soma total de REPASSE LÍQUIDO em BRL
+SELECT SUM(clearing_value) AS total_repasse_liquido_brl 
+FROM clearing_transactions 
+WHERE dest_currency = '986'; #23665749.7
+
+- 2.6. Soma total de REPASSE LÍQUIDO em USD
+SELECT SUM(clearing_value) AS total_repasse_liquido_usd 
+FROM clearing_transactions 
+WHERE dest_currency = '840'; #10007.84
+
