@@ -6,3 +6,6 @@ FUNCTIONS/
 
 # Ignorar a pasta VISA_CLEARING
 VISA_CLEARING/
+
+# database
+database.slq
