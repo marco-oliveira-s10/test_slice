@@ -62,3 +62,5 @@ Esperamos que você faça:
 - Total de Registros: O número total de registros encontrados nos arquivos do diretório CLEARING é de 290.404, correspondendo exatamente à mesma quantidade de registros no banco de dados após a importação.
 
 - Erro no Arquivo: O arquivo VISA_TRANSACTIONAL_CLEARING_20240705_02.json apresentou um erro de sintaxe no final. Não está claro se esse erro foi intencional, mas optei por corrigir manualmente o problema em vez de aplicar validações automáticas de JSON na aplicação.
+
+- Total de Registros: O número total de registros encontrados nos arquivos do diretório EP747 é de 500, correspondendo exatamente à mesma quantidade de registros no banco de dados após a importação.

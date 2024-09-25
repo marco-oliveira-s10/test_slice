@@ -1,7 +1,5 @@
 <?php
 
-ini_set('memory_limit', '9G');
-
 require_once 'Database.php';
 
 class VisaClearingImporter {
