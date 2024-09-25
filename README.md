@@ -56,4 +56,9 @@ Esperamos que você faça:
 - Nos dê seu feedback sobre o nível de dificuldade do desafio, se acertamos na escolha do tema e se foi interessante/divertido;
 
 
-# Time Slice.
+# OBS:
+- Identificador do Campo: O campo slice_code no conjunto de dados do CLEARING não é um identificador único. Inicialmente, eu supus que seria e, por isso, estava configurado como uma chave única. No entanto, essa restrição foi removida.(Esse aspecto é crucial, pois a ausência de um identificador único no objeto JSON significa que removi a tarefa de verificar registros duplicados. É fundamental garantir que todas as informações dos arquivos sejam capturadas para evitar a perda de dados. Minha linha de raciocínio se baseia na necessidade de refletir todos os registros contidos nos arquivos para o banco de dados.)
+
+- Total de Registros: O número total de registros encontrados nos arquivos do diretório CLEARING é de 290.404, correspondendo exatamente à mesma quantidade de registros no banco de dados após a importação.
+
+- Erro no Arquivo: O arquivo VISA_TRANSACTIONAL_CLEARING_20240705_02.json apresentou um erro de sintaxe no final. Não está claro se esse erro foi intencional, mas optei por corrigir manualmente o problema em vez de aplicar validações automáticas de JSON na aplicação.
